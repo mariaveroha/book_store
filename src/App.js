@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Banner from './Components/Banner/Banner';
+import Footer from './Components/Footer/Footer';
+import Header from './Components/Header/Header';
+import News from './Components/News/News';
+import Recommended from './Components/Recommended/Recommended';
+import TopSellers from './Components/TopSellers/TopSellers';
+import { useMediaQuery } from 'react-responsive'
 function App() {
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 751 })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        isTabletOrMobile ?
+          <>
+            <Header />
+            <News />
+            <TopSellers />
+            <Recommended />
+            <Footer />
+          </>
+          :
+          <>
+            <Header />
+            <Banner />
+            <TopSellers />
+            <Recommended />
+            <News />
+            <Footer />
+          </>
+      }
+
     </div>
   );
 }

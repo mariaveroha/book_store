@@ -1,0 +1,85 @@
+.card {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0D0842;
+    margin: 0 0 15px 0;
+}
+
+.desc {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(13, 8, 66, 0.52);
+    margin: 0 0 25px 0;
+}
+
+.flex {
+    display: flex;
+    column-gap: 27px;
+    margin: 0 0 33px 0;
+}
+
+.price {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #0D0842;
+}
+
+.oldPrice {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #6C6C6C;
+    text-decoration: line-through;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 20px 7px 15px;
+    gap: 10px;
+    width: 170px;
+    height: 36px;
+    background-color: #FFCE1A;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.icons {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+.icons img {
+    cursor: pointer;
+}
+@media screen and (max-width: 750px) {
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 401px;
+  }
+    
+  }

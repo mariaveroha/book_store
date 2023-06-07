@@ -1,0 +1,238 @@
+.topFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.nav {
+    display: flex;
+    column-gap: 40px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #0D0842;
+    margin-top: 40px;
+    margin-bottom: 161px;
+}
+
+.flex {
+    display: flex;
+}
+
+.subtitle {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #0D0842;
+    margin: 0 0 38px 0;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.input {
+    background: #FFFFFF;
+    border: 0.9px solid #FFCE1A;
+    border-radius: 8px 0px 0px 8px;
+    padding: 7px 0;
+    width: 283px;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.input::placeholder {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(108, 108, 108, 0.5);
+    text-align: center;
+}
+
+.button {
+    background: #FFCE1A;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+    border: none;
+    padding: 7px 49px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFF8;
+}
+
+.bottomFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    column-gap: 46px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #0D0842;
+}
+
+.social {
+    display: flex;
+    column-gap: 50px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.bFlex {
+    display: flex;
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #0D0842;
+    margin: 0 0 15px 0;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1080px) {
+    .topFooter {
+        display: flex;
+        justify-content: normal;
+        align-items: start;
+        column-gap: 50px;
+    }
+
+    .nav {
+        column-gap: 30px;
+    }
+
+    .input {
+        width: 203px;
+    }
+
+    .button {
+        padding: 7px 40px;
+        font-size: 14px;
+    }
+
+    .blockTop {
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 869px) {
+    .topFooter {
+        column-gap: 30px;
+    }
+
+    .input {
+        width: 150px;
+    }
+
+    .input::placeholder {
+        font-size: 12px;
+    }
+
+    .button {
+        padding: 7px 30px;
+    }
+
+    .info {
+        column-gap: 30px;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .subtitle {
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: rgba(13, 8, 66, 0.52);
+        max-width: 366px;
+        margin: 0 0 20px 0;
+    }
+
+    .button {
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+        background: #FFCE1A;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .blockImg {
+        display: flex;
+        justify-content: center;
+    }
+
+    .blockImg img {
+        width: 100%;
+    }
+
+    .footer {
+        background: linear-gradient(285.02deg, #FEAF38 48.52%, #FFCE1A 100.93%);
+        height: 214px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item {
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #FFFFF8;
+        margin-top: 0;
+        margin-bottom: 14px;
+        cursor: pointer;
+    }
+
+    .icons {
+        display: flex;
+        column-gap: 50px;
+    }
+
+    .icons img {
+        cursor: pointer;
+    }
+}

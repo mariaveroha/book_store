@@ -1,0 +1,146 @@
+.banner {
+    display: flex;
+    column-gap: 252px;
+    margin-bottom: 86px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    color: #0D0842;
+    margin: 0 0 30px 0;
+}
+
+.subtitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0D0842;
+    margin: 0 0 40px 0;
+    max-width: 453px;
+}
+
+.button {
+    width: 171px;
+    height: 36px;
+    background: #FFCE1A;
+    box-shadow: -21px 8px 9px rgba(254, 175, 56, 0.01), -12px 5px 8px rgba(254, 175, 56, 0.05), -5px 2px 6px rgba(254, 175, 56, 0.09), -1px 1px 3px rgba(254, 175, 56, 0.1), 0px 0px 0px rgba(254, 175, 56, 0.1);
+    border-radius: 8px;
+    border: none;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFF8;
+    cursor: pointer;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.img1 {
+    width: 272.16px;
+    z-index: 10;
+    position: absolute;
+}
+
+.img2 {
+    width: 246.19px;
+    z-index: 8;
+    position: absolute;
+    left: 140px;
+}
+
+.img3 {
+    width: 214.16px;
+    z-index: 6;
+    position: absolute;
+    left: 280px;
+}
+
+@media screen and (max-width: 1370px) {
+    .banner {
+        column-gap: 180px;
+    }
+    .img1 {
+        width: 252.16px;
+    }
+
+    .img2 {
+        left: 120px;
+        width: 226.19px;
+    }
+
+    .img3 {
+        width: 200.16px;
+        left: 220px;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .banner {
+        column-gap: 100px;
+    }
+    .img1 {
+        width: 222.16px;
+    }
+
+    .img2 {
+        left: 100px;
+        width: 206.19px;
+    }
+
+    .img3 {
+        width: 160.16px;
+        left: 220px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .banner {
+        column-gap: 50px;
+        margin-top: 65px;
+    }
+    .img1 {
+        width: 182.16px;
+    }
+
+    .img2 {
+        left: 90px;
+        width: 160.19px;
+    }
+
+    .img3 {
+        width: 140.16px;
+        left: 160px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 869px) {
+   .subtitle {
+    max-width: 350px;
+   }
+   .banner {
+    column-gap: 30px;
+   }
+  }
