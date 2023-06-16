@@ -18,10 +18,13 @@
   background-color: white;
   position: absolute;
   right: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 
 .next {
-  top: 150px;
+  top: 120px;
 }
 
 .nextN {
@@ -30,51 +33,52 @@
 }
 
 .slick-slide {
-  margin: 0 20px; 
+  margin: 0 20px;
 }
 
 
 
 @media screen and (max-width: 1550px) {
-  .App{
+  .App {
     max-width: 1200px;
   }
 }
 
 @media screen and (max-width: 1370px) {
-  .App{
+  .App {
     max-width: 1100px;
   }
 }
 
 @media screen and (max-width: 1220px) {
-  .App{
+  .App {
     max-width: 1000px;
   }
 }
 
 @media screen and (max-width: 1080px) {
-  .App{
+  .App {
     max-width: 800px;
   }
 }
 
 
 @media screen and (max-width: 869px) {
-  .App{
+  .App {
     max-width: 700px;
   }
+
   .slick-slide {
-    margin: 0 10px; 
+    margin: 0 10px;
   }
-  
+
 }
 
 @media screen and (max-width: 750px) {
-  .App{
-   max-width: none;
-   background-color: #F3F3F3;
+  .App {
+    max-width: none;
+    background-color: #F3F3F3;
   }
 
-  
+
 }

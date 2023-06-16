@@ -7,24 +7,23 @@ import top1 from '../../Images/top1.png'
 import top2 from '../../Images/top2.png'
 import top3 from '../../Images/top3.png'
 import Card from "../Recommended/Card";
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 const TopSellers = () => {
     const [rec, setRec] = useState([
-        { id: 1, img: top1, name: 'The Time Has Come', desc: "Lindbergh's Pharmacy is an Athens, Georgia, institution...", price: '$ 27.89', oldPrice: '$ 30.99' },
-        { id: 2, img: top2, name: 'I Want a Better Catastrophe...', desc: 'With global warming projected to rocket past the...', price: '$ 26.99', oldPrice: '$ 29.99' },
-        { id: 3, img: top3, name: 'I Want a Better Catastrophe...', desc: 'Forget a Mentor, Find...', price: '$ 29.99', oldPrice: '$ 32.99' },
-        { id: 4, img: top3, name: 'Forget a Mentor, Find...', desc: 'Forget a Mentor, Find...', price: '$ 29.99', oldPrice: '$ 32.99' },
+        { id: 1, img: top1, name: ' Horror1 The Time Has Come', desc: "Lindbergh's Pharmacy is an Athens, Georgia, institution...", price: '$ 27.89', oldPrice: '$ 30.99', genre: 'Horror' },
+        { id: 2, img: top2, name: ' Fiction1 I Want a Better Catastrophe...', desc: 'With global warming projected to rocket past the...', price: '$ 26.99', oldPrice: '$ 29.99', genre: 'Fiction' },
+        { id: 3, img: top3, name: ' Romance1 I Want a Better Catastrophe...', desc: 'Forget a Mentor, Find...', price: '$ 29.99', oldPrice: '$ 32.99', genre: 'Romance' },
+        { id: 4, img: top3, name: ' Mystery1 Forget a Mentor, Find...', desc: 'Forget a Mentor, Find...', price: '$ 29.99', oldPrice: '$ 32.99', genre: 'Mystery' },
+        { id: 5, img: top3, name: ' Fiction2 Forget a Mentor, Find...', desc: 'Forget a Mentor, Find...', price: '$ 29.99', oldPrice: '$ 32.99', genre: 'Fiction' },
 
     ])
+    const [filter, setFilter] = useState(rec);
+    const [selected, setSelected] = useState('')
     var settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: true,
         nextArrow: <SlickArrowRight />,
         variableWidth: true,
         rows: 1,
@@ -34,70 +33,50 @@ const TopSellers = () => {
                 breakpoint: 1370,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
+                    slidesToScroll: 1
                 }
             },
             {
                 breakpoint: 750,
                 settings: {
+                    arrows: false,
                     slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    arrows: false
+                    slidesToScroll: 1
                 }
             },
           
         ]
     };
 
-    const [genre, setGenre] = React.useState('');
-
     const handleChange = (event) => {
-        setGenre(event.target.value);
+        setSelected(event.target.value)
+        console.log(selected)
+        if (selected === 'Choose a genre') {
+            setFilter(rec)
+        }
+        else {
+            let newList = [...rec].filter(item => item.genre === selected);
+            setFilter(newList)
+            console.log(filter)
+        }
+
     };
 
 
     return (
         <div className={s.topSellers}>
             <p className={s.title}>Top Sellers </p>
-            <FormControl sx={{ m: 1, width: 188 }}>
-
-                <Select
-                    value={genre}
-                    onChange={handleChange}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}
-                    className={s.select}
-                >
-                    <MenuItem disabled value="">
-                        <span className={s.option}>Choose a genre</span>
-                    </MenuItem>
-                    <MenuItem className={s.option} value='Fiction'>Fiction</MenuItem>
-                    <MenuItem className={s.option} value='Romance'>Romance</MenuItem>
-                    <MenuItem className={s.option} value='Mystery'>Mystery</MenuItem>
-                    <MenuItem className={s.option} value='Horror'>Horror</MenuItem>
-                </Select>
-            </FormControl>
+            <select className={s.select} onChange={handleChange} value={selected}>
+                <option >Choose a genre</option>
+                <option>Fiction</option>
+                <option >Romance</option>
+                <option >Mystery</option>
+                <option >Horror</option>
+            </select>
             <Slider {...settings}>
-                <div>
-                    {rec.slice(0, 1).map((rec) =>
-                        <Card rec={rec} key={rec.id} />)}
-                </div>
-                <div>
-                    {rec.slice(1, 2).map((rec) =>
-                        <Card rec={rec} key={rec.id} />)}
-                </div>
-                <div>
-                    {rec.slice(2, 3).map((rec) =>
-                        <Card rec={rec} key={rec.id} />)}
-                </div>
-                <div>
-                    {rec.slice(3, 4).map((rec) =>
-                        <Card rec={rec} key={rec.id} />)}
-                </div>
+                {filter.map((rec) =>
+                    <Card rec={rec} key={rec.id} />)}
 
-             
             </Slider>
         </div>
     )
