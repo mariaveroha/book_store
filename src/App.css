@@ -8,19 +8,22 @@
 
 .next,
 .nextN {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  color: #0D0842;
-  font-size: 2.4vw;
-  background-color: white;
   position: absolute;
   right: 0;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+  cursor: pointer;
+}
+
+.next::after, .nextN::after {
+  content: '';
+  position: absolute ;
+  right: 0;
+  bottom: auto;
+  right: auto;
+  background-image: url(../src/Images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 38px;
+  height: 38px;
 }
 
 .next {

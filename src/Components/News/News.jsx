@@ -94,7 +94,7 @@ export default News
 
 
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-    <button
+    <div
         {...props}
         className={
             "nextN" +
@@ -103,6 +103,6 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
         aria-hidden="true"
         aria-disabled={currentSlide === slideCount - 1 ? true : false}
         type="button"
-    > &rsaquo;
-    </button>
+    >
+    </div>
 );

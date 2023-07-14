@@ -16,26 +16,20 @@ const TopSellers = () => {
         { id: 5, img: top3, name: ' Fiction2 Forget a Mentor, Find...', desc: 'Forget a Mentor, Find...', price: '$ 29.99', oldPrice: '$ 32.99', genre: 'Fiction' },
 
     ])
+
     const [filter, setFilter] = useState(rec);
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('Choose a genre')
     var settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: <SlickArrowRight />,
         variableWidth: true,
         rows: 1,
         adaptiveHeight: true,
         responsive: [
-            {
-                breakpoint: 1370,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
             {
                 breakpoint: 750,
                 settings: {
@@ -44,7 +38,7 @@ const TopSellers = () => {
                     slidesToScroll: 1
                 }
             },
-          
+
         ]
     };
 
@@ -55,11 +49,11 @@ const TopSellers = () => {
             setFilter(rec)
         }
         else {
+            setFilter(rec)
             let newList = [...rec].filter(item => item.genre === selected);
             setFilter(newList)
             console.log(filter)
         }
-
     };
 
 
@@ -67,17 +61,18 @@ const TopSellers = () => {
         <div className={s.topSellers}>
             <p className={s.title}>Top Sellers </p>
             <select className={s.select} onChange={handleChange} value={selected}>
-                <option >Choose a genre</option>
-                <option>Fiction</option>
-                <option >Romance</option>
-                <option >Mystery</option>
-                <option >Horror</option>
+                <option value='Choose a genre' >Choose a genre</option>
+                <option value='Fiction'>Fiction</option>
+                <option value='Romance'>Romance</option>
+                <option value='Mystery' >Mystery</option>
+                <option value='Horror' >Horror</option>
             </select>
             <Slider {...settings}>
                 {filter.map((rec) =>
                     <Card rec={rec} key={rec.id} />)}
 
             </Slider>
+
         </div>
     )
 }
@@ -85,7 +80,7 @@ const TopSellers = () => {
 export default TopSellers
 
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-    <button
+    <div
         {...props}
         className={
             "next" +
@@ -94,6 +89,6 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
         aria-hidden="true"
         aria-disabled={currentSlide === slideCount - 1 ? true : false}
         type="button"
-    > &rsaquo;
-    </button>
+    >
+    </div>
 );

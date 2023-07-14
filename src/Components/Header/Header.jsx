@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from './Header.module.css'
 import login from '../../Images/Account.png'
 import like from '../../Images/Favorite.png'
@@ -9,6 +9,12 @@ import { useMediaQuery } from 'react-responsive'
 const Header = () => {
     const isTabletOrMobile = useMediaQuery({ maxWidth: 751 })
     const [menuActive, setMenuActive] = useState(false)
+    useEffect(() => {
+       if (menuActive) {
+        document.body.classList.add('bodyMenu')
+       } 
+       else {document.body.classList.remove('bodyMenu')}
+      });
     return (
 
         <div className={s.header}>
