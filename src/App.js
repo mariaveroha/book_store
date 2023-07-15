@@ -9,28 +9,32 @@ import { useMediaQuery } from 'react-responsive'
 function App() {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 751 })
   return (
-    <div className="App">
+    <div>
       {
         isTabletOrMobile ?
           <>
-            <Header />
-            <News />
-            <TopSellers />
-            <Recommended />
-            <Footer />
+            <div className='container'>
+              <Header />
+              <News />
+              <TopSellers />
+              <Recommended />
+              <Footer />
+            </div>
           </>
           :
           <>
-            <Header />
-            <Banner />
-            <TopSellers />
-            <Recommended />
-            <News />
+            <div className='container'>
+              <Header />
+              <Banner />
+              <TopSellers />
+              <Recommended />
+              <News />
+            </div>
             <Footer />
           </>
       }
 
-    </div>
+    </div >
   );
 }
 

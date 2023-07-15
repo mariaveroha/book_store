@@ -61,21 +61,21 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <div className={s.bottomFooter}>
-                            <div className={s.info}>
-                                <p className={s.item}>Privacy Policy</p>
-                                <p className={s.item}>Terms of Use</p>
-                                <p className={s.item}>Sales and Refunds</p>
-                                <p className={s.item}>Legal</p>
-                            </div>
-                            <div className={s.social}>
-                                <img className={s.icon} src={inst} />
-                                <img className={s.icon} src={google} />
-                                <img className={s.icon} src={facebook} />
+                        <div className={s.line}>
+                            <div className={s.bottomFooter}>
+                                <div className={s.info}>
+                                    <p className={s.item}>Privacy Policy</p>
+                                    <p className={s.item}>Terms of Use</p>
+                                    <p className={s.item}>Sales and Refunds</p>
+                                    <p className={s.item}>Legal</p>
+                                </div>
+                                <div className={s.social}>
+                                    <img className={s.icon} src={inst} />
+                                    <img className={s.icon} src={google} />
+                                    <img className={s.icon} src={facebook} />
+                                </div>
                             </div>
                         </div>
-
                     </div>
             }
         </>

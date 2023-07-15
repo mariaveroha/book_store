@@ -43,17 +43,16 @@ const TopSellers = () => {
     };
 
     const handleChange = (event) => {
-        setSelected(event.target.value)
-        console.log(selected)
-        if (selected === 'Choose a genre') {
+        const selectedValue = event.target.value
+        if (selectedValue === 'Choose a genre') {
             setFilter(rec)
         }
         else {
             setFilter(rec)
-            let newList = [...rec].filter(item => item.genre === selected);
+            let newList = [...rec].filter(item => item.genre === selectedValue);
             setFilter(newList)
-            console.log(filter)
         }
+        setSelected(selectedValue)
     };
 
 
